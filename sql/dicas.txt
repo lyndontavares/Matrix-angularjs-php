@@ -1,0 +1,13 @@
+tar -xvf ./matrix.tar
+
+triggers and stored procedures you only need to add the �routines command line parameter:
+
+mysqldump <other mysqldump options> --routines outputfile.sql
+
+Lets assume we want to backup ONLY the stored procedures and triggers and not the mysql tables and data (this can be useful to import these in another db/server that has already the data but not the stored procedures and/or triggers), then we should run something like:
+
+mysqldump --routines --no-create-info --no-data --no-create-db --skip-opt <database> > outputfile.sql
+
+and this will save only the procedures/functions/triggers of the . If you need to import them to another db/server you will have to run something like:
+
+mysql <database> < outputfile.sql

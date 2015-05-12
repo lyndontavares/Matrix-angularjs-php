@@ -1,0 +1,116 @@
+<div>
+    <a ui-sref=overview class="pull-right btn btn-primary btn-outline btn-rounded">voltar ao formulário</a> 
+    <h2>Reports <small>gráficos</small></h2>
+    <!--   <span class="glyphicon glyphicon-dashboard bg-fade"></span> -->
+    <div class=jumbotron>
+        <div class=container>
+            <h1>Gráfico de Expertises</h1>
+            <p>Expertise por módulo do Dolphin ERP por equipe</p>
+            <!--         <p> <a class="btn btn-primary btn-lg btn-outline btn-rounded">Learn more</a> </p>-->
+        </div>
+
+    <div class="btn-group" dropdown dropdown-append-to-body >
+    <button type="button" class="btn btn-primary dropdown-toggle" dropdown-toggle>
+      Avaliado: {{desenvolvedor}} <span class="caret">
+      </button>
+      
+         <ul class="dropdown-menu" role="menu" >
+             <li ng-repeat="dev in devs" ng-click="selecionarDev($index)"><a href="">{{dev.nome}}</a></li>
+	 </ul>
+      </ul>
+    </div>
+    
+
+        
+        
+
+            <div class="btn-group" dropdown dropdown-append-to-body >
+                <button type="button" class="btn btn-primary dropdown-toggle" dropdown-toggle>
+                    Módulo: {{modulo_sel.nome}} <span class="caret">
+                </button>
+
+                <ul class="dropdown-menu" role="menu" >
+                    <li ng-repeat="e in modulos" ng-click="selecioneModulo($index)"><a href="">{{e.nome}}</a></li>
+                </ul>
+                </ul>
+
+            </div>
+        
+        
+        
+            <div class="btn-group" dropdown dropdown-append-to-body >
+                <button type="button" class="btn btn-primary dropdown-toggle" dropdown-toggle>
+                    Expertise: {{expertise_sel.nome}} <span class="caret">
+                </button>
+
+                <ul class="dropdown-menu" role="menu" >
+                    <li ng-repeat="e in expertises" ng-click="selecioneExpertise($index)"><a href="">{{e.id}} - {{e.nome}}</a></li>
+                </ul>
+                </ul>
+            </div>
+
+            <hr>     
+        
+
+        <div class="row">   
+
+            <div class="col-md-3">    
+                <h3> Equipe CENTAURION</h3>
+                <nvd3 options="options" data="dataMachado"></nvd3>
+            </div>
+
+            <div class="col-md-3">    
+                <h3> Equipe DATAPOWER</h3>
+                <nvd3 options="options" data="dataRoberto"></nvd3>
+            </div>
+
+            <div class="col-md-3">    
+                <h3> Equipe JAVA</h3>
+                <nvd3 options="options" data="dataDba"></nvd3>
+            </div>
+
+            <div class="col-md-3">    
+                <h3> Equipe de Produto</h3>
+                <nvd3 options="options" data="dataProduto"></nvd3>
+            </div>
+
+        </div>
+        
+        
+        
+        
+        <ul id="multicol-menu" class="nav pull-right">
+    <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">MultiCol Menu <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+            <li>
+                <div class="row" style="width: 400px;">
+                    <ul class="list-unstyled col-md-4">
+                        <li><a href="#">test1-1</a></li>
+                        <li><a href="#">test1-2</a></li>
+                        <li><a href="#">test1-3</a></li>
+                    </ul>
+                    <ul class="list-unstyled col-md-4">
+                        <li><a href="#">test2-1</a></li>
+                        <li><a href="#">test2-2</a></li>
+                        <li><a href="#">test2-3</a></li>
+                    </ul>
+                    <ul class="list-unstyled col-md-4">
+                        <li><a href="#">test3-1</a></li>
+                        <li><a href="#">test3-2</a></li>
+                        <li><a href="#">test3-3</a></li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </li>
+</ul>
+
+        
+
+    </div>
+</div>
+
+
+          
+

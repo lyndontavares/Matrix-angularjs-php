@@ -1,0 +1,85 @@
+<div ng-controller="OverviewCtrl">
+    <a ui-sref=sobre class="pull-right btn btn-primary btn-outline btn-rounded">Regras Avaliação</a> 
+    <a ui-sref=reports class="pull-right btn btn-primary btn-outline btn-rounded">Reports</a> 
+    <h2>Dolphin <small>ERP</small></h2>
+
+    <span ng-if="completou"  class="glyphicon glyphicon glyphicon glyphicon-check bg-fade" ></span>
+
+    <span ng-show="{{completou}}" class="glyphicon glyphicon glyphicon-ok bg-fade"></span>
+    <div class=jumbotron>
+        <div class=container>
+
+            <h1>Formulário de avaliação</h1>
+            Formulário de avaliação EM conhecimentos em regras de negícios do Dolphin ERP.
+            <br>
+            <br>
+
+            <button type="button" class="btn btn-primary">Avaliador: {{username}}</button>  
+
+
+            <div class="btn-group" dropdown dropdown-append-to-body >
+                <button type="button" class="btn btn-primary dropdown-toggle" dropdown-toggle>
+                    Avaliado: {{desenvolvedor}} <span class="caret">
+                </button>
+
+                <ul class="dropdown-menu" role="menu" >
+                    <li ng-repeat="dev in devs" ng-click="selecionarDev($index)"><a href="">{{dev.nome}}</a></li>
+                </ul>
+                </ul>
+            </div>
+
+
+
+
+
+
+            <!--
+            <button class='btn btn-primary' ng-click="addAlert()">Salvar Avaliação</button>
+            -->
+
+
+            <hr />
+            <progressbar max="max" value="posi" class="progress-striped active"><span style="color:white; white-space:nowrap;">{{posi}} / {{max}}</span></progressbar>
+            <hr />
+
+            <div class="row">
+                <div class="col-md-3">
+
+                </div>
+                <div class="col-md-9">
+
+                </div>
+            </div>
+
+            <div ng-repeat="x in modulos">
+
+                <div class="row">
+                    <div class="col-md-3">
+                        <p>{{x.pergunta_nome.substring(0, 21)}}</p>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="btn-group btn-default">
+                            <label    class="btn btn-default btn-outline" ng-model="modulos[$index].resposta" btn-radio="'1'" ng-click="marcarOpcao($index, 1)">Novato</label>
+                            <label class="btn btn-default btn-outline" ng-model="modulos[$index].resposta" btn-radio="'2'" ng-click="marcarOpcao($index, 2)">Aprendiz</label>
+                            <label class="btn btn-default btn-outline" ng-model="modulos[$index].resposta" btn-radio="'3'" ng-click="marcarOpcao($index, 3)">Praticante</label>
+                            <label class="btn btn-default btn-outline" ng-model="modulos[$index].resposta" btn-radio="'4'" ng-click="marcarOpcao($index, 4)">Profissional</label>
+                            <label class="btn btn-default btn-outline " ng-model="modulos[$index].resposta" btn-radio="'5'" ng-click="marcarOpcao($index, 5)">Professor</label>
+                            <label class="btn btn-default btn-outline " ng-model="modulos[$index].resposta" btn-radio="'6'" ng-click="marcarOpcao($index, 6)">Líder</label>
+                            <label class="btn btn-default btn-outline " ng-model="modulos[$index].resposta" btn-radio="'7'" ng-click="marcarOpcao($index, 7)">Mestre</label>
+                            <label class="btn btn-default btn-outline " ng-model="modulos[$index].resposta" btn-radio="'8'" ng-click="marcarOpcao($index, 8)">Não Sei</label>
+                        </div>
+                    </div>
+                    <div class="col-md-1">
+                        <span ng-if="x.resposta != '0'" class="glyphicon glyphicon-check" style="color: #08C"></span>
+                    </div>
+
+
+                </div>
+            </div>
+
+
+
+
+        </div>
+    </div>
+

@@ -1,0 +1,129 @@
+<div>
+    <a ui-sref=overview class="pull-right btn btn-primary btn-outline btn-rounded">voltar ao formulário</a> 
+    <h2>Reports <small>gráficos</small></h2>
+    <!--   <span class="glyphicon glyphicon-dashboard bg-fade"></span> -->
+    <div class=jumbotron>
+        <div class=container>
+            <h1>Gráfico de Expertises</h1>
+            <p>Expertise por módulo do Dolphin ERP por equipe</p>
+            <!--         <p> <a class="btn btn-primary btn-lg btn-outline btn-rounded">Learn more</a> </p>-->
+        </div>
+
+
+
+        <div class="row">   
+
+            <div class="col-md-3">    
+                <h3> Equipe CENTAURION</h3>
+                <nvd3 options="options" data="dataMachado"></nvd3>
+            </div>
+
+            <div class="col-md-3">    
+                <h3> Equipe DATAPOWER</h3>
+                <nvd3 options="options" data="dataRoberto"></nvd3>
+            </div>
+
+            <div class="col-md-3">    
+                <h3> Equipe JAVA</h3>
+                <nvd3 options="options" data="dataDba"></nvd3>
+            </div>
+
+            <div class="col-md-3">    
+                <h3> Equipe de Produto</h3>
+                <nvd3 options="options" data="dataProduto"></nvd3>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+
+
+/*        //opções dos gráficos de pizza
+        $s.options = {
+            chart: {
+                type: 'pieChart',
+                height: 500,
+                x: function (d) {
+                    return d.key;
+                },
+                y: function (d) {
+                    return d.y;
+                },
+                showLabels: true,
+                transitionDuration: 500,
+                labelThreshold: 0.01,
+                legend: {
+                    margin: {
+                        top: 5,
+                        right: 35,
+                        bottom: 5,
+                        left: 0
+                    }
+                }
+            }
+        };
+*/
+
+
+
+
+
+/*       //Expertises
+        $s.expertise_sel = {"id": "1", "nome": "Novato", "descricao": null};
+        $s.expertices = [];
+        //ao selecionar filtro
+        $s.selecioneExpertise = function ($index) {
+            $s.expertise_sel = $s.expertises[$index];
+            $s.fetchData('Machado', $s.expertise_sel.id[0], $s.modulo_sel.id);
+
+        }
+
+*/
+        //Módulos dolphin
+        //$s.modulo_sel = {'nome':'teste'};
+        //$h.get($r.HOST_LOCAL + 'rest/per/2').success(function (response) { $s.modulo_sel = response.records;}).error(console.log($r.HOST_LOCAL + 'rest/per/2'));
+        //$h.get($r.HOST_LOCAL + 'rest/per').success(function (response) {
+        //    $s.modulos = response.records;
+        //    $s.modulo_sel = $s.modulos[0];
+            //fetch dados iniciais
+            //$s.fetchData('Machado', $s.expertise_sel.id[0], $s.modulo_sel.id);
+
+        //});
+
+        //ao selecionar filtro
+        //$s.selecioneModulo = function ($index) {
+        //    $s.modulo_sel = $s.modulos[$index];
+        //}
+
+        //$s.fetchExpertises = function () {
+        //    var p = $r.HOST_LOCAL + 'rest/exp';
+        //    $h.get(p)
+        //            .success(function (response) {
+        //                $s.expertises = response.records;
+        //            })
+        // }
+        //$s.fetchExpertises();
+
+
+        //atualizacao datasource
+/*        $s.fetchData = function (time, expe, mod) {
+            var p = $r.HOST_LOCAL + 'rest/item/grafico/{"time":"' + time + '","id":' + expe + ',"mod":' + mod + '}';
+            console.log(p);
+            var r = [{key: "Não respondeu(100%)", y: "100"}];
+            $h.get(p)
+                    .success(function (response) {
+                        if (response.records.length === 0) {
+                            $s.dataMachado = r;
+                        }
+                        else
+                        {
+                            $s.dataMachado = response.records;
+                        }
+                    })
+                    .error(function (data) {
+                        $s.dataMachado = r;
+                    });
+        }
+*/

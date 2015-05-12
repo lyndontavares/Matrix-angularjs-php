@@ -1,0 +1,46 @@
+<div>
+   <a ui-sref=overview class="pull-right btn btn-primary btn-outline btn-rounded">voltar ao formulário</a> 
+   <h2>Alterar <small>senha</small></h2>
+
+   <span class="glyphicon glyphicon glyphicon-user bg-fade"></span>
+   
+   <div class=jumbotron>
+      <div class=container>
+         <h1>Alterar Senha</h1>
+         <p>{{username}}, utilize este formulário para alterar sua senha.</p>
+<!--         <p> <a class="btn btn-primary btn-lg btn-outline btn-rounded">Learn more</a> </p>-->
+        
+         
+         <form role=form ng-submit="alterarSenha()">
+            <div class=form-content style="font-size: 10p">
+                
+               <div class=form-group> 
+                    <input type=password class="form-control   input-lg" placeholder="nova senha" ng-model="senha1" required > 
+                    <span ng-show="form.username.$dirty && form.username.$error.required" class="help-block"></span>
+               </div>
+                
+               <div class=form-group> 
+                    <input type=password class="form-control   input-lg" placeholder="redigite senha" ng-model="senha2" required> 
+                    <span ng-show="form.password.$dirty && form.password.$error.required" class="help-block"></span>
+               </div>
+                
+            </div>
+            <button type=submit class="btn btn-info btn-outline btn-lg btn-rounded" ng-disabled="form.$invalid || dataLoading" >Confimar alteração</button> 
+
+             <div class=form-group> 
+            <img ng-if="dataLoading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+             </div>
+            
+         </form>
+ 
+
+      </div>
+       
+
+    
+    
+       
+   </div>
+</div>
+
+          
